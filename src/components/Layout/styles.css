@@ -1,0 +1,70 @@
+.layout {
+  height: 100%;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+}
+
+.divider {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.nav {
+  background-color: pink;
+  height: 170px;
+}
+
+.content-bg { 
+  background-color: aqua;
+  flex: 1;
+  position: relative;
+}
+
+.content {
+  background-color: white;
+  position: absolute;
+  width: 340px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -70px;
+}
+
+.buttons {
+  background-color: greenyellow;
+  height: 70px;
+}
+
+
+@media only screen and (min-width: 600px) {
+  .layout {
+    width: 900px;
+    height: 600px;
+    display: flex;
+    background-color: yellow;
+  }
+
+  .divider {
+    flex-direction: row;
+  }
+
+  .nav {
+    width: 300px;
+    height: 100%;
+    background-color: pink;
+  }
+
+  .content-bg {
+    position: initial;
+    flex: 1;
+  }
+
+  .content {
+    position: inherit;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    top: -70px;
+  }
+}

@@ -1,0 +1,62 @@
+.step_button__content {
+  display: none;
+}
+
+.step_button__button {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  gap: 1rem;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.step_button__button.active .step_button__number{
+  background-color: #BEE2F9;
+  color: #072A50;
+  border: none;
+}
+
+
+.step_button__button:hover {
+  opacity: 1;
+}
+.step_button__button:hover .step_button__number{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.step_button__number {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-weight: 700;
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step_button__content span{
+  color: white;
+  height: 1.2rem;
+  opacity: 0.7;
+}
+
+.step_button__content h4{
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 600px) {
+
+  .step_button__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -6,16 +6,14 @@ import "./styles.css";
 const Layout: FC = () => {
   return (
     <div className="layout">
-      <div className="container">
-        <nav className="nav">
-          <Steps />
-        </nav>
-        <section className="content-bg">
-          <div className="content">
-            <PersonalInfo />
-          </div>
-        </section>
-      </div>
+      <nav className="nav">
+        <Steps />
+      </nav>
+      <section className="content-bg">
+        <div className="content">
+          <PersonalInfo />
+        </div>
+      </section>
       <section className="buttons">buttons</section>
     </div>
   );

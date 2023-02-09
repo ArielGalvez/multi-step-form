@@ -23,9 +23,9 @@
 .step_button__button:hover {
   opacity: 1;
 }
-.step_button__button:hover .step_button__number{
+/* .step_button__button:hover .step_button__number{
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+} */
 
 .step_button__number {
   border-radius: 50%;

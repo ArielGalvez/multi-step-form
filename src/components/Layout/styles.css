@@ -20,15 +20,23 @@
   width: 340px;
   left: 50%;
   transform: translateX(-50%);
-  top: -70px;
   padding: 34px 24px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 8px;
-  top: -76px;
+  top: -70px;
+}
+
+.actions {
+  display: flex;
+  background-color: var(--White);
 }
 
 .buttons {
-  background-color: greenyellow;
+  width: 340px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
@@ -43,7 +51,7 @@
     grid-template-areas:
     "nav content"
     "nav actions";
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 270px 1fr;
     grid-template-rows: 1fr 70px;
 
   }
@@ -69,7 +77,13 @@
     padding: 42px 92px;
   }
 
-  .buttons {
+  .actions {
     grid-area: actions;
+    background-color: inherit;
+  }
+
+  .buttons {
+    width: 100%;
+    padding: 0 92px;
   }
 }

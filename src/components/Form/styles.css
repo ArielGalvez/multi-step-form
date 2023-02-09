@@ -1,5 +1,6 @@
 .form__title {
   color: var(--Marine-blue);
+  height: 2.5rem;
 }
 
 .form__description {

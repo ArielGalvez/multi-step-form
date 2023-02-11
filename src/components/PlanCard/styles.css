@@ -1,0 +1,33 @@
+.plan_card {
+  border: 1px solid var(--Light-gray);
+  border-radius: 8px;
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+}
+
+.plan_card span{
+  color: var(--Cool-gray);
+}
+
+.plan_card p{
+  color: var(--Marine-blue);
+  font-size: 14px;
+}
+
+.plan_card.selected {
+  border: 1px solid var(--Purplish-blue);
+}
+
+.plan_card__content {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 600px) {
+  .plan_card {
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+  }
+}

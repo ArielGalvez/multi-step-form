@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import Button from "../Button/Button";
 import PersonalInfo from "../PersonalInfo/PersonalInfo";
+import SelectPlan from "../SelectPlan/SelectPlan";
 import Steps from "../Steps/Steps";
 import "./styles.css";
 
@@ -12,7 +13,7 @@ const Layout: FC = () => {
       </nav>
       <section className="content-bg">
         <div className="content">
-          <PersonalInfo />
+          <SelectPlan />
         </div>
       </section>
       <section className="actions">

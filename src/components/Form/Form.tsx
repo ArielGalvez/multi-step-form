@@ -10,11 +10,11 @@ type FormProps = {
 const Form: FC<FormProps> = (props) => {
   const { title, description, children } = props;
   return (
-    <form className="form">
+    <div className="form">
       {title && <h1 className="form__title">{title}</h1>}
       {description && <p className="form__description">{description}</p>}
       {children}
-    </form>
+    </div>
   );
 };
 

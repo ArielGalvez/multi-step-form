@@ -8,7 +8,7 @@ const PersonalInfo = (props: Props) => {
   return (
     <Form
       title="Personal Info"
-      description="PLease provide your name, email address, and phone number"
+      description="PLease provide your name, email address, and phone number."
     >
       <InputText name="name" label="Name" placeholder="e.g. Stephen King" />
       <InputText

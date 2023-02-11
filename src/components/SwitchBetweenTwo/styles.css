@@ -1,0 +1,18 @@
+.switch_between_two {
+  margin-top: 24px;
+  display: flex;
+  padding: 12px;
+  border-radius: 8px;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Magnolia);
+}
+
+.switch_between_two span {
+  font-weight: 700;
+  color: var(--Cool-gray);
+}
+.switch_between_two .active {
+  color: var(--Marine-blue);
+}

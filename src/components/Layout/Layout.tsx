@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import AddOns from "../AddOns/AddOns";
 import Button from "../Button/Button";
+import FinishUp from "../FinishUp/FinishUp";
 import PersonalInfo from "../PersonalInfo/PersonalInfo";
 import SelectPlan from "../SelectPlan/SelectPlan";
 import Steps from "../Steps/Steps";
@@ -14,7 +15,7 @@ const Layout: FC = () => {
       </nav>
       <section className="content-bg">
         <div className="content">
-          <AddOns />
+          <FinishUp />
         </div>
       </section>
       <section className="actions">

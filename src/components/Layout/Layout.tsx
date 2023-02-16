@@ -5,6 +5,7 @@ import FinishUp from "../FinishUp/FinishUp";
 import PersonalInfo from "../PersonalInfo/PersonalInfo";
 import SelectPlan from "../SelectPlan/SelectPlan";
 import Steps from "../Steps/Steps";
+import TankYou from "../TankYou/TankYou";
 import "./styles.css";
 
 const Layout: FC = () => {
@@ -15,7 +16,7 @@ const Layout: FC = () => {
       </nav>
       <section className="content-bg">
         <div className="content">
-          <FinishUp />
+          <TankYou />
         </div>
       </section>
       <section className="actions">

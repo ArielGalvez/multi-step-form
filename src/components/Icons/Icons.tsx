@@ -2,7 +2,7 @@ import React from "react";
 import iconArcade from './icon-arcade.svg';
 import iconAdvanced from './icon-advanced.svg';
 import iconPro from './icon-pro.svg';
-import "./styles.css";
+import iconTankYou from './icon-thank-you.svg';
 
 
 export const IconArcade = () => {
@@ -20,5 +20,11 @@ export const IconAdvanced = () => {
 export const IconPro = () => {
   return (
     <img src={iconPro} width={40} height={40} className="icon_pro" alt="icon-pro" />
+  );
+};
+
+export const IconTankYou = () => {
+  return (
+    <img src={iconTankYou} width={60} height={60} className="icon_pro" alt="icon-tank-you" />
   );
 };

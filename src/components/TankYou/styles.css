@@ -1,0 +1,17 @@
+.tank_you {
+  text-align: center;
+  color: var(--Cool-gray);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.tank_you h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--Marine-blue);
+  line-height:3rem;
+}

@@ -1,0 +1,12 @@
+.addon_cards {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media only screen and (min-width: 600px) {
+  .addon_cards {
+    gap: 16px;
+  }
+}

@@ -1,0 +1,43 @@
+.addon_card {
+  border: 1px solid var(--Light-gray);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.addon_card h4{
+  color: var(--Marine-blue);
+  font-size: 14px;
+}
+
+.addon_card span{
+  color: var(--Cool-gray);
+  font-size: 11px;
+}
+
+.addon_card.selected {
+  border: 1px solid var(--Purplish-blue);
+}
+
+.addon_card__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.addon_card__price {
+  font-size: 14px;
+  margin-left: auto;
+  color: var(--Purplish-blue);
+}
+
+@media only screen and (min-width: 600px) {
+  .addon_card {
+    padding: 20px;
+  }
+
+  .addon_card span{
+    font-size: 14px;
+  }
+}

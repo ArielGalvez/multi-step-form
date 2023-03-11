@@ -5,14 +5,15 @@ type StepButtonProps = {
   number: number;
   title: string;
   active?: boolean;
-  completed: boolean;
+  completed?: boolean;
+  onClick: () => void;
 };
 
 const StepButton: FC<StepButtonProps> = (props) => {
-  const { number, title, active = false, completed } = props;
+  const { number, title, active = false, completed, onClick } = props;
   return (
     <li className="step_button">
-      <button className={`step_button__button ${active && "active"}`} type="button">
+      <button className={`step_button__button ${active && "active"}`} type="button" onClick={onClick}>
         <div className="step_button__number">{number}</div>
         <div className="step_button__content">
           <span>{`STEP ${number}`}</span>

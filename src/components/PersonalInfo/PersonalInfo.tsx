@@ -2,14 +2,11 @@ import { FormikProps } from "formik";
 import React from "react";
 import Form from "../Form/Form";
 import InputText from "../InputText/InputText";
+import { DataForm } from "../MultiStepForm/MultiStep.container";
 
 interface PersonalInfoProps {
-  handleChange: FormikProps<{
-    name: string;
-    email: string;
-    phone: string;
-  }>["handleChange"];
-  values: { name: string; email: string; phone: string };
+  handleChange: FormikProps<DataForm>["handleChange"];
+  values: DataForm;
   errors: any;
   touched: any;
 }

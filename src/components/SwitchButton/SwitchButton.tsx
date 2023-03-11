@@ -1,29 +1,24 @@
+import { FormikProps } from "formik";
 import React, { FC, useEffect, useState } from "react";
+import { DataForm } from "../MultiStepForm/MultiStep.container";
 import "./styles.css";
 
 type SwitchButtonProps = {
-  active?: boolean;
-  onChange?: (active: boolean) => void;
+  name: string;
+  handleChange: FormikProps<DataForm>["handleChange"];
+  values: DataForm;
 };
 
 const SwitchButton: FC<SwitchButtonProps> = (props) => {
-  const { active, onChange } = props;
-  const [checked, setChecked] = useState(false);
-
-  const handleChange = () => {
-    setChecked((prevState) => {
-      onChange && onChange(!prevState);
-      return !prevState;
-    });
-  };
-
-  useEffect(() => {
-    setChecked(Boolean(active));
-  }, [active]);
-
+  const { name, handleChange, values } = props;
   return (
     <label className="switch_button">
-      <input type="checkbox" checked={checked} onChange={handleChange} />
+      <input
+        type="checkbox"
+        name={name}
+        checked={values.isYearly}
+        onChange={handleChange}
+      />
       <span className="slider"></span>
     </label>
   );

@@ -1,45 +1,48 @@
+import { FormikProps } from "formik";
 import React, { FC, useState } from "react";
 import AddonCard from "../AddonCard/AddonCard";
 import CheckBox from "../CheckBox/CheckBox";
+import { DataForm } from "../MultiStepForm/MultiStep.container";
 import "./styles.css";
 
 type AddonsCardsProps = {
-  isYearly: boolean;
+  handleChange: FormikProps<DataForm>["handleChange"];
+  values: DataForm;
 };
 
-const AddonsCards: FC<AddonsCardsProps> = ({ isYearly }) => {
-  const [isOnline, setIsOnline] = useState(true);
-  const [isLarger, setIsLarger] = useState(true);
-  const [isCustomizable, setIsCustomizable] = useState(false);
+const AddonsCards: FC<AddonsCardsProps> = ({
+  handleChange,
+  values,
+}) => {
   return (
     <ul className="addon_cards">
       <AddonCard
-        name="Online service"
+        name="isOnlineService"
+        value="Online service"
         description="Access to multiplayer games"
-        price={isYearly ? "+$10/yr" : "+$1/mo"}
-        isYearly={isYearly}
-        selected={isOnline}
-      >
-        <CheckBox active={isOnline} onChange={setIsOnline} />
-      </AddonCard>
+        price={values.isYearly ? "+$10/yr" : "+$1/mo"}
+        isYearly={values.isYearly}
+        handleChange={handleChange}
+        values={values}
+      />
       <AddonCard
-        name="Larger storage"
+        name="isLargerStorage"
+        value="Larger storage"
         description="Extra 1TB of cloud save"
-        price={isYearly ? "+$20/yr" : "+$2/mo"}
-        isYearly={isYearly}
-        selected={isLarger}
-      >
-        <CheckBox active={isLarger} onChange={setIsLarger} />
-      </AddonCard>
+        price={values.isYearly ? "+$20/yr" : "+$2/mo"}
+        isYearly={values.isYearly}
+        handleChange={handleChange}
+        values={values}
+      />
       <AddonCard
-        name="Customizable profile"
+        name="isCustomizableProfile"
+        value="Customizable profile"
         description="Custom theme on your profile"
-        price={isYearly ? "+$20/yr" : "+$2/mo"}
-        isYearly={isYearly}
-        selected={isCustomizable}
-      >
-        <CheckBox active={isCustomizable} onChange={setIsCustomizable} />
-      </AddonCard>
+        price={values.isYearly ? "+$20/yr" : "+$2/mo"}
+        isYearly={values.isYearly}
+        handleChange={handleChange}
+        values={values}
+      />
     </ul>
   );
 };

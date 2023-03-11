@@ -1,29 +1,19 @@
-import React, { FC, useEffect, useState } from "react";
+import { FormikProps } from "formik";
+import React from "react";
 import "./styles.css";
 
-type CheckBoxProps = {
-  active: boolean;
-  onChange: (active: boolean) => void
+type CheckBoxProps<T extends {}> = {
+  handleChange: FormikProps<T>["handleChange"];
+  values: T;
+  name: keyof T;
 };
 
-const CheckBox: FC<CheckBoxProps> = (props) => {
-  const { active, onChange } = props;
-  const [checked, setChecked] = useState(false);
-
-  const handleChange = () => {
-    setChecked((prevState) => {
-      onChange && onChange(!prevState);
-      return !prevState;
-    });
-  };
-
-  useEffect(() => {
-    setChecked(Boolean(active));
-  }, [active]);
+function CheckBox<T extends {}> (props: CheckBoxProps<T>) {
+  const { values, handleChange, name } = props;
 
   return (
     <label className="checkbox">
-      <input type="checkbox" checked={checked} onChange={handleChange} />
+      <input type="checkbox" name={name as string} checked={values[name] as boolean} onChange={handleChange} />
       <span className="mark"></span>
     </label>
   );

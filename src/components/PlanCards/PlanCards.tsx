@@ -1,22 +1,46 @@
+import { FormikProps } from "formik";
 import React, { FC } from "react";
 import { IconArcade, IconAdvanced, IconPro } from "../Icons/Icons";
+import { DataForm } from "../MultiStepForm/MultiStep.container";
 import PlanCard from "../PlanCard/PlanCard";
 import "./styles.css";
 
 type PlanCardsProps = {
-  isYearly: boolean;
+  handleChange: FormikProps<DataForm>["handleChange"];
+  values: DataForm;
 };
 
-const PlanCards: FC<PlanCardsProps> = ({ isYearly }) => {
+const PlanCards: FC<PlanCardsProps> = ({ handleChange, values }) => {
   return (
     <ul className="plan_cards">
-      <PlanCard name="Arcade" description={isYearly ? "$90/yr" : "$9/mo"} isYearly={isYearly} selected>
+      <PlanCard
+        name="plan"
+        description={values.isYearly? "$90/yr" : "$9/mo"}
+        isYearly={values.isYearly}
+        handleChange={handleChange}
+        values={values}
+        value="Arcade"
+      >
         <IconArcade />
       </PlanCard>
-      <PlanCard name="Advanced" description={isYearly ? "$120/yr" : "$12/mo"} isYearly={isYearly}>
+      <PlanCard
+        name="plan"
+        description={values.isYearly ? "$120/yr" : "$12/mo"}
+        isYearly={values.isYearly}
+        handleChange={handleChange}
+        values={values}
+        value="Advanced"
+      >
         <IconAdvanced />
       </PlanCard>
-      <PlanCard name="Pro" description={isYearly ? "$150/yr" : "$15/mo"} isYearly={isYearly}>
+      <PlanCard
+        name="plan"
+        description={values.isYearly ? "$150/yr" : "$15/mo"}
+        isYearly={values.isYearly}
+        handleChange={handleChange}
+        values={values}
+        value="Pro"
+      >
         <IconPro />
       </PlanCard>
     </ul>

@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import { FormikProps } from "formik";
+import React from "react";
 import Form from "../Form/Form";
+import { DataForm } from "../MultiStepForm/MultiStep.container";
 import TotalDetail from "../TotalDetail/TotalDetail";
 
-type Props = {};
+type Props = {
+  handleChange: FormikProps<DataForm>["handleChange"];
+  values: DataForm;
+};
 
 const FinishUp = (props: Props) => {
-  const [isYearly, setIsYearly] = useState(false);
-
-
   return (
     <Form
       title="Finishing up"
       description="Double-check everthing looks OK before confirming."
     >
-      <TotalDetail isYearly={isYearly} />
+      <TotalDetail {...props} />
     </Form>
   );
 };

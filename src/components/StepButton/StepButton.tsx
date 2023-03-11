@@ -12,7 +12,7 @@ const StepButton: FC<StepButtonProps> = (props) => {
   const { number, title, active = false, completed } = props;
   return (
     <li className="step_button">
-      <button className={`step_button__button ${active && "active"}`}>
+      <button className={`step_button__button ${active && "active"}`} type="button">
         <div className="step_button__number">{number}</div>
         <div className="step_button__content">
           <span>{`STEP ${number}`}</span>

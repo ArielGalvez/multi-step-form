@@ -19,3 +19,18 @@
   color: var(--Marine-blue);
   font-weight: 700;
 }
+
+.input_text.error input{
+  border: 1px solid red;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error_text {
+  font-size: 12px;
+  color: red;
+  font-weight: 700;
+}

@@ -5,14 +5,24 @@ type InputTextProps = {
   name: string;
   label?: string;
   placeholder?: string;
+  value: string;
+  onChange: any;
+  errorMessage: string;
+  touched: boolean;
 };
 
 const InputText: FC<InputTextProps> = (props) => {
-  const { name, label, placeholder } = props;
+  const { name, label, placeholder, value, onChange, errorMessage, touched } = props;
+  const hasError = errorMessage && touched;
   return (
-    <div className="input_text">
-      <label htmlFor={name}>{label}</label>
-      <input name={name} type="text" placeholder={placeholder} />
+    <div className={`input_text ${hasError && 'error'}`}>
+      <div className="labels">
+        <label htmlFor={name}>{label}</label>
+        {hasError && (
+          <span className="error_text">{errorMessage}</span>
+        )}
+      </div>
+      <input name={name} type="text" placeholder={placeholder} value={value} onChange={onChange} />
     </div>
   );
 };

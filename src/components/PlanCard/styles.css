@@ -4,6 +4,7 @@
   display: flex;
   gap: 16px;
   padding: 16px;
+  cursor: pointer;
 }
 
 .plan_card span{

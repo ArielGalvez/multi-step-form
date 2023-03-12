@@ -11,8 +11,23 @@
   color: var(--Light-blue);
   background-color: var(--Marine-blue);
 }
+.button.primary:hover {
+  background-color: #144C87;
+}
 
 .button.secondary {
   color: var(--Cool-gray);
   background-color: white;
 }
+.button.secondary:hover {
+  background-color: var(--Alabaster);
+}
+
+.button.tertiary {
+  color: var(--Light-blue);
+  background-color: var(--Purplish-blue);
+}
+.button.tertiary:hover {
+  background-color: #938CFE;
+}
+

@@ -5,6 +5,7 @@
   align-items: center;
   gap: 16px;
   padding: 16px;
+  cursor: pointer;
 }
 
 .addon_card h4{

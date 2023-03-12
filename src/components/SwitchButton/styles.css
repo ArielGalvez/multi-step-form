@@ -40,6 +40,9 @@
 .switch_button input[type="checkbox"] + .slider {
   background-color: var(--Marine-blue);
 }
+.switch_button:hover input[type="checkbox"] + .slider {
+  background-color: #144C87;
+}
 
 .switch_button input[type="checkbox"]:checked + .slider:before {
   -webkit-transform: translateX(20px);

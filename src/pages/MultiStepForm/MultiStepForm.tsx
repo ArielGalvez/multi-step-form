@@ -26,13 +26,21 @@ export const MultiStepForm: FC<MultiStepFormProps> = (props) => {
       {rest.step !== 5 && (
         <section className="actions">
           <div className="buttons">
-            <Button
-              text="Go Back"
-              variant="secondary"
-              type="button"
-              onClick={rest.prevStep}
-            />
-            <Button text="Next Step" variant="primary" type="submit" />
+            {rest.step === 1 ? (
+              <span></span>
+            ) : (
+              <Button
+                text="Go Back"
+                variant="secondary"
+                type="button"
+                onClick={rest.prevStep}
+              />
+            )}
+            {rest.step === 4 ? (
+              <Button text="Confirm" variant="tertiary" type="submit" />
+            ) : (
+              <Button text="Next Step" variant="primary" type="submit" />
+            )}
           </div>
         </section>
       )}

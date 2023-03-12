@@ -1,16 +1,16 @@
 import { FormikProps } from "formik";
-import React, { useState } from "react";
-import AddonsCards from "../AddonsCards/AddonsCards";
-import Form from "../Form/Form";
+import React from "react";
+import { AddonsCards } from "../../components/AddonsCards/AddonsCards";
+import { Form } from "../../components/Form/Form";
 import { DataForm } from "../MultiStepForm/MultiStep.container";
 
-type Props = {
+type AddOnsProps = {
   handleChange: FormikProps<DataForm>["handleChange"];
   values: DataForm;
 };
 
-const AddOns = (props: Props) => {
-  const {values, handleChange} = props
+export const AddOns: React.FC<AddOnsProps> = (props) => {
+  const { values, handleChange } = props;
 
   return (
     <Form
@@ -21,5 +21,3 @@ const AddOns = (props: Props) => {
     </Form>
   );
 };
-
-export default AddOns;

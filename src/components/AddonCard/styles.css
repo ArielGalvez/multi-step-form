@@ -19,6 +19,7 @@
 
 .addon_card.selected {
   border: 1px solid var(--Purplish-blue);
+  background-color: var(--Alabaster);
 }
 
 .addon_card__content {

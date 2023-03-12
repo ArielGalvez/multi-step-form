@@ -1,6 +1,6 @@
 import { FormikProps } from "formik";
-import React, { FC, useEffect, useState } from "react";
-import { DataForm } from "../MultiStepForm/MultiStep.container";
+import React from "react";
+import { DataForm } from "../../pages/MultiStepForm/MultiStep.container";
 import "./styles.css";
 
 type SwitchButtonProps = {
@@ -9,7 +9,7 @@ type SwitchButtonProps = {
   values: DataForm;
 };
 
-const SwitchButton: FC<SwitchButtonProps> = (props) => {
+export const SwitchButton: React.FC<SwitchButtonProps> = (props) => {
   const { name, handleChange, values } = props;
   return (
     <label className="switch_button">
@@ -23,5 +23,3 @@ const SwitchButton: FC<SwitchButtonProps> = (props) => {
     </label>
   );
 };
-
-export default SwitchButton;

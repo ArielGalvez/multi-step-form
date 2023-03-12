@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 // import logo from './logo.svg';
-import './App.css';
-import { MultiStepContainer } from './components/MultiStepForm/MultiStep.container';
+import "./App.css";
+import { MultiStepContainer } from "./pages/MultiStepForm/MultiStep.container";
 
 function App() {
   return (
-    <main className='App'>
+    <main className="App">
       <MultiStepContainer />
     </main>
   );

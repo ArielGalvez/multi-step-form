@@ -1,7 +1,7 @@
 import { FormikProps } from "formik";
 import React, { FC } from "react";
-import { DataForm } from "../MultiStepForm/MultiStep.container";
-import StepButton from "../StepButton/StepButton";
+import { DataForm } from "../../pages/MultiStepForm/MultiStep.container";
+import { StepButton } from "../StepButton/StepButton";
 import "./styles.css";
 
 interface StepsProps {
@@ -10,7 +10,7 @@ interface StepsProps {
   formik: FormikProps<DataForm>;
 }
 
-const Steps: FC<StepsProps> = ({ step, goToStep, formik }) => {
+export const Steps: FC<StepsProps> = ({ step, goToStep, formik }) => {
   const buttons = [
     {
       number: 1,
@@ -37,7 +37,6 @@ const Steps: FC<StepsProps> = ({ step, goToStep, formik }) => {
           title={title}
           number={number}
           active={step === number}
-          completed
           onClick={() => {
             goToStep({ stepToGo: number, formik });
           }}
@@ -46,5 +45,3 @@ const Steps: FC<StepsProps> = ({ step, goToStep, formik }) => {
     </ul>
   );
 };
-
-export default Steps;

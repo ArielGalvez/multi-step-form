@@ -1,29 +1,28 @@
 import { FormikProps } from "formik";
-import React, { FC, ReactNode } from "react";
-import { DataForm } from "../MultiStepForm/MultiStep.container";
+import React, { ReactNode } from "react";
 import "./styles.css";
 
-type PlanCardProps = {
+type PlanCardProps<T extends {}> = {
   children: ReactNode;
-  name: string;
+  name: keyof T;
   description: string;
   isYearly: boolean;
   value: string;
-  handleChange: FormikProps<DataForm>["handleChange"];
-  values: DataForm;
+  handleChange: FormikProps<T>["handleChange"];
+  values: T;
 };
 
-const PlanCard: FC<PlanCardProps> = (props) => {
+export function PlanCard<T extends {}>(props: PlanCardProps<T>) {
   const { children, name, description, isYearly, handleChange, values, value } =
     props;
   return (
     <li>
-      <label className={`plan_card ${values.plan === value && "selected"}`}>
+      <label className={`plan_card ${values[name] === value && "selected"}`}>
         <input
           type="radio"
-          name={name}
+          name={name as string}
           value={value}
-          checked={values.plan === value}
+          checked={values[name] === value}
           onChange={handleChange}
           hidden={true}
         />
@@ -36,6 +35,4 @@ const PlanCard: FC<PlanCardProps> = (props) => {
       </label>
     </li>
   );
-};
-
-export default PlanCard;
+}

@@ -1,8 +1,12 @@
 import { FormikProps } from "formik";
 import React, { FC } from "react";
 import { IconArcade, IconAdvanced, IconPro } from "../Icons/Icons";
-import { DataForm } from "../MultiStepForm/MultiStep.container";
-import PlanCard from "../PlanCard/PlanCard";
+import {
+  DataForm,
+  formatPrice,
+  prices,
+} from "../../pages/MultiStepForm/MultiStep.container";
+import { PlanCard } from "../PlanCard/PlanCard";
 import "./styles.css";
 
 type PlanCardsProps = {
@@ -10,41 +14,48 @@ type PlanCardsProps = {
   values: DataForm;
 };
 
-const PlanCards: FC<PlanCardsProps> = ({ handleChange, values }) => {
+export const PlanCards: FC<PlanCardsProps> = ({ handleChange, values }) => {
+  const plans = [
+    {
+      value: "Arcade",
+      description: formatPrice(
+        values.isYearly,
+        prices.plan["Arcade"](values.isYearly)
+      ),
+      icon: <IconArcade />,
+    },
+    {
+      value: "Advanced",
+      description: formatPrice(
+        values.isYearly,
+        prices.plan["Advanced"](values.isYearly)
+      ),
+      icon: <IconAdvanced />,
+    },
+    {
+      value: "Pro",
+      description: formatPrice(
+        values.isYearly,
+        prices.plan["Pro"](values.isYearly)
+      ),
+      icon: <IconPro />,
+    },
+  ];
   return (
     <ul className="plan_cards">
-      <PlanCard
-        name="plan"
-        description={values.isYearly? "$90/yr" : "$9/mo"}
-        isYearly={values.isYearly}
-        handleChange={handleChange}
-        values={values}
-        value="Arcade"
-      >
-        <IconArcade />
-      </PlanCard>
-      <PlanCard
-        name="plan"
-        description={values.isYearly ? "$120/yr" : "$12/mo"}
-        isYearly={values.isYearly}
-        handleChange={handleChange}
-        values={values}
-        value="Advanced"
-      >
-        <IconAdvanced />
-      </PlanCard>
-      <PlanCard
-        name="plan"
-        description={values.isYearly ? "$150/yr" : "$15/mo"}
-        isYearly={values.isYearly}
-        handleChange={handleChange}
-        values={values}
-        value="Pro"
-      >
-        <IconPro />
-      </PlanCard>
+      {plans.map((plan) => (
+        <PlanCard
+          key={plan.value}
+          name="plan"
+          description={plan.description}
+          isYearly={values.isYearly}
+          handleChange={handleChange}
+          values={values}
+          value={plan.value}
+        >
+          {plan.icon}
+        </PlanCard>
+      ))}
     </ul>
   );
 };
-
-export default PlanCards;

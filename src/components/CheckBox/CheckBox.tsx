@@ -1,5 +1,5 @@
-import { FormikProps } from "formik";
 import React from "react";
+import { FormikProps } from "formik";
 import "./styles.css";
 
 type CheckBoxProps<T extends {}> = {
@@ -8,15 +8,18 @@ type CheckBoxProps<T extends {}> = {
   name: keyof T;
 };
 
-function CheckBox<T extends {}> (props: CheckBoxProps<T>) {
+export function CheckBox<T extends {}>(props: CheckBoxProps<T>) {
   const { values, handleChange, name } = props;
 
   return (
     <label className="checkbox">
-      <input type="checkbox" name={name as string} checked={values[name] as boolean} onChange={handleChange} />
+      <input
+        type="checkbox"
+        name={name as string}
+        checked={values[name] as boolean}
+        onChange={handleChange}
+      />
       <span className="mark"></span>
     </label>
   );
-};
-
-export default CheckBox;
+}

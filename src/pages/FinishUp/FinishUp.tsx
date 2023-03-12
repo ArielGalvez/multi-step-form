@@ -1,15 +1,15 @@
 import { FormikProps } from "formik";
 import React from "react";
-import Form from "../Form/Form";
+import { Form } from "../../components/Form/Form";
 import { DataForm } from "../MultiStepForm/MultiStep.container";
-import TotalDetail from "../TotalDetail/TotalDetail";
+import { TotalDetail } from "../../components/TotalDetail/TotalDetail";
 
-type Props = {
+type FinishUpProps = {
   handleChange: FormikProps<DataForm>["handleChange"];
   values: DataForm;
 };
 
-const FinishUp = (props: Props) => {
+export const FinishUp: React.FC<FinishUpProps> = (props) => {
   return (
     <Form
       title="Finishing up"
@@ -19,5 +19,3 @@ const FinishUp = (props: Props) => {
     </Form>
   );
 };
-
-export default FinishUp;

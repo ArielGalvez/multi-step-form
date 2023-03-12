@@ -1,6 +1,10 @@
 import { FormikProps } from "formik";
-import React, { FC, ReactNode } from "react";
-import { DataForm } from "../MultiStepForm/MultiStep.container";
+import React, { FC } from "react";
+import {
+  DataForm,
+  formatPrice,
+  prices,
+} from "../../pages/MultiStepForm/MultiStep.container";
 import "./styles.css";
 
 type TotalDetailProps = {
@@ -8,14 +12,37 @@ type TotalDetailProps = {
   values: DataForm;
 };
 
-const TotalDetail: FC<TotalDetailProps> = (props) => {
+export const TotalDetail: FC<TotalDetailProps> = (props) => {
   const { handleChange, values } = props;
+  const planPrice = prices.plan[values.plan as "Arcade" | "Advanced" | "Pro"](
+    values.isYearly
+  );
+  const OnlineServicePrice = prices.addons["isOnlineService"](values.isYearly);
+  const LargerStoragePrice = prices.addons["isLargerStorage"](values.isYearly);
+  const CustomizableProfilePrice = prices.addons["isCustomizableProfile"](
+    values.isYearly
+  );
+  const calculateTotal = () => {
+    let res = planPrice;
+    if (values.isOnlineService) {
+      res += OnlineServicePrice;
+    }
+    if (values.isLargerStorage) {
+      res += LargerStoragePrice;
+    }
+    if (values.isCustomizableProfile) {
+      res += CustomizableProfilePrice;
+    }
+    return res;
+  };
   return (
     <div className="total_detail">
       <div className="total_detail_content">
         <div className="total_detail_header">
-          <p className="two">
-            <span>{`${values.plan} (${values.isYearly? 'Yearly': 'Monthly'})`}</span>
+          <p className="plan">
+            <span>{`${values.plan} (${
+              values.isYearly ? "Yearly" : "Monthly"
+            })`}</span>
             <label className="link">
               <input
                 hidden
@@ -27,33 +54,44 @@ const TotalDetail: FC<TotalDetailProps> = (props) => {
               Change
             </label>
           </p>
-          <p>{values.isYearly ? "$90/yr" : "$9/mo"}</p>
+          <p>{formatPrice(values.isYearly, planPrice)}</p>
         </div>
         {values.isOnlineService && (
           <div className="total_detail_body">
             <p>Online service</p>
-            <p className="blue">{values.isYearly ? "+$10/yr" : "+$1/mo"}</p>
+            <p className="blue">{`+${formatPrice(
+              values.isYearly,
+              OnlineServicePrice
+            )}`}</p>
           </div>
         )}
         {values.isLargerStorage && (
           <div className="total_detail_body">
             <p>Larger storage</p>
-            <p className="blue">{values.isYearly ? "+$20/yr" : "+$2/mo"}</p>
+            <p className="blue">{`+${formatPrice(
+              values.isYearly,
+              LargerStoragePrice
+            )}`}</p>
           </div>
         )}
         {values.isCustomizableProfile && (
           <div className="total_detail_body">
             <p>Customizable profile</p>
-            <p className="blue">{values.isYearly ? "+$20/yr" : "+$2/mo"}</p>
+            <p className="blue">{`+${formatPrice(
+              values.isYearly,
+              CustomizableProfilePrice
+            )}`}</p>
           </div>
         )}
       </div>
       <div className="total_detail_result">
         <p>{`Total ${values.isYearly ? "(per year)" : "(per month)"}`}</p>
-        <p className="purple">{values.isYearly ? "+$120/yr" : "+$12/mo"}</p>
+        <p className="purple">
+          {values.isYearly
+            ? `+$${calculateTotal()}/yr`
+            : `+$${calculateTotal()}/mo`}
+        </p>
       </div>
     </div>
   );
 };
-
-export default TotalDetail;

@@ -1,14 +1,14 @@
 import { Form as FormFormik, FormikProps } from "formik";
 import React, { FC } from "react";
-import Button from "../Button/Button";
-import Steps from "../Steps/Steps";
+import { Button } from "../../components/Button/Button";
+import { Steps } from "../../components/Steps/Steps";
 import { DataForm } from "./MultiStep.container";
 import "./styles.css";
 
 export interface MultiStepFormProps {
   children: React.ReactNode;
   step: number;
-  goToStep: (data: { stepToGo: number; formik: any }) => void;
+  goToStep: (data: { stepToGo: number; formik: FormikProps<DataForm> }) => void;
   prevStep: () => void;
   formik: FormikProps<DataForm>;
 }

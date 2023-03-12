@@ -1,6 +1,5 @@
 import React, { FC, ReactNode } from "react";
 import "./styles.css";
-import { Form as FormFormik } from 'formik'
 
 type FormProps = {
   title?: string;
@@ -8,7 +7,7 @@ type FormProps = {
   children: ReactNode;
 };
 
-const Form: FC<FormProps> = (props) => {
+export const Form: FC<FormProps> = (props) => {
   const { title, description, children } = props;
   return (
     <div className="form">
@@ -18,5 +17,3 @@ const Form: FC<FormProps> = (props) => {
     </div>
   );
 };
-
-export default Form;

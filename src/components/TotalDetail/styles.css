@@ -23,7 +23,7 @@
   font-weight: 700;
 }
 
-.total_detail_header .two{
+.total_detail_header .plan{
   display: flex;
   flex-direction: column;
   align-items: flex-start;

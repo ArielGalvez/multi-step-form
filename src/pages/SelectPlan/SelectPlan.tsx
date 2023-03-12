@@ -1,16 +1,16 @@
 import { FormikProps } from "formik";
 import React from "react";
-import Form from "../Form/Form";
+import { Form } from "../../components/Form/Form";
 import { DataForm } from "../MultiStepForm/MultiStep.container";
-import PlanCards from "../PlanCards/PlanCards";
-import SwitchBetweenTwo from "../SwitchBetweenTwo/SwitchBetweenTwo";
+import { PlanCards } from "../../components/PlanCards/PlanCards";
+import { SwitchBetweenTwo } from "../../components/SwitchBetweenTwo/SwitchBetweenTwo";
 
-type Props = {
+type SelectPlanProps = {
   handleChange: FormikProps<DataForm>["handleChange"];
   values: DataForm;
 };
 
-const SelectPlan = (props: Props) => {
+export const SelectPlan: React.FC<SelectPlanProps> = (props) => {
   const { handleChange, values } = props;
 
   return (
@@ -18,10 +18,7 @@ const SelectPlan = (props: Props) => {
       title="Select your plan"
       description="You have the option of monthly or yearly billing."
     >
-      <PlanCards
-        handleChange={handleChange}
-        values={values}
-      />
+      <PlanCards handleChange={handleChange} values={values} />
       <SwitchBetweenTwo
         option1="Montly"
         option2="Yearly"
@@ -31,5 +28,3 @@ const SelectPlan = (props: Props) => {
     </Form>
   );
 };
-
-export default SelectPlan;

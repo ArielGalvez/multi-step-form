@@ -17,6 +17,7 @@
 
 .plan_card.selected {
   border: 1px solid var(--Purplish-blue);
+  background-color: var(--Alabaster);
 }
 
 .plan_card__content {

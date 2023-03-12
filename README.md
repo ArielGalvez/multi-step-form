@@ -1,46 +1,96 @@
-# Getting Started with Create React App
+# Frontend Mentor - Multi-step form solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
+- [Run locally](#run-locally)
 
-### `npm start`
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Overview
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### The challenge
 
-### `npm test`
+Users should be able to:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Complete each step of the sequence
+- See a summary of their selections on the final step and confirm their order
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
 
-### `npm run build`
+### Screenshot
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Dekptop](./public/dektop.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Links
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Solution URL: [Solution](https://github.com/ArielGalvez/multi-step-form)
+- Live Site URL: [Demo](https://your-live-site-url.com)
 
-### `npm run eject`
+## My process
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Layout the mockups using mobile fist
+- Adap the components to desktop view using media-queries
+- Integrate the compoenents with formkik
+- Add validations with yup and integrate with formik
+- Handle pricings
+- Refactor code
+- Describe solution
+- Configure CI/CD with github actions
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Built with
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Semantic HTML5 markup
+- CSS
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [Typescript](https://www.typescriptlang.org/) - programming languaje
+- [React](https://reactjs.org/) - JS library
+- [CSS modules](https://github.com/css-modules/css-modules) - For styles `still pure CSS`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### What I learned
 
-## Learn More
+I wanted to practice my CSS skills and build something by using mockups. And the same time Im training a friend and told him that I will build something that he can use as an example.
+Lately, I have been using only component frameworks libraries such as material-ui, chakra-ui and others, so I wanted to remember how it tastes to build our custom components with React.
+I don't feel comfortable explaining how it was, but I'm pretty sure you won't find `any` in the whole code.
+Something that I feel proud is the layout, they are the same components. just resizing using media-queries.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Continued development
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I would like to have another complex design to implement, on my free time as part of my hoobies I like implement figma designs using html+css.
+Maybe in the future I will go for React Native.
+
+### Useful resources
+
+- [w3schools](https://www.w3schools.com/tags/att_input_type_checkbox.asp) - heplful to look html input props.
+- [Formik Doc](https://formik.org/docs/guides/validation) - Useful to get shape of the schema and validate form with Yup.
+
+## Author
+
+- Website - [Ariel Galvez Ponce](https://github.com/ArielGalvez)
+- Frontend Mentor - [@ArielGalvez](https://www.frontendmentor.io/profile/ArielGalvez)
+- Instagram - [arielgalvezponce](https://www.instagram.com/arielgalvezponce/)
+- Linkedin - [ariel-gálvez-3b5119260](https://www.linkedin.com/in/ariel-g%C3%A1lvez-3b5119260/)
+
+## Acknowledgments
+
+Thanks to the frontend mentor for providing the screenshots and palette of colors.
+
+## Run locally
+
+```script
+    npm start
+```

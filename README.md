@@ -92,5 +92,6 @@ Thanks to the frontend mentor for providing the screenshots and palette of color
 ## Run locally
 
 ```script
+    npm i
     npm start
 ```

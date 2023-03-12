@@ -17,11 +17,11 @@ export const StepButton: FC<StepButtonProps> = (props) => {
         type="button"
         onClick={onClick}
       >
-        <div className="step_button__number">{number}</div>
-        <div className="step_button__content">
+        <p className="step_button__number">{number}</p>
+        <p className="step_button__content">
           <span>{`STEP ${number}`}</span>
           <h4>{title}</h4>
-        </div>
+        </p>
       </button>
     </li>
   );

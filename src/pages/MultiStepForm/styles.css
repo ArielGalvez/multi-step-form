@@ -43,7 +43,7 @@
 }
 
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 700px) {
   .multi-step-form {
     max-width: 946px;
     width: 100%;
@@ -80,7 +80,7 @@
     transform: none;
     box-shadow: none;
     border-radius: 0%;
-    padding: 42px 0;
+    padding: 42px 20px;
     margin: 0 auto;
   }
 

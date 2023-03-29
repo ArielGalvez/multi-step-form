@@ -34,7 +34,7 @@
   color: var(--Purplish-blue);
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 700px) {
   .addon_card {
     padding: 20px;
   }

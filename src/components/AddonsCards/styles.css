@@ -5,7 +5,7 @@
   gap: 14px;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 700px) {
   .addon_cards {
     gap: 16px;
   }
